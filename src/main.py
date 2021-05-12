@@ -133,8 +133,3 @@ async def redirect():
     from fastapi.responses import RedirectResponse
     return RedirectResponse("/redirect")
 
-@app.get("/exception", status_code=500)
-async def exception():
-    import json
-    s = json.loads(open("/tmp/out").read())
-    return s

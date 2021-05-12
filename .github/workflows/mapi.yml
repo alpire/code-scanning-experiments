@@ -38,7 +38,6 @@ jobs:
         MAPI_TOKEN: ${{ secrets.MAPI_TOKEN }}
       run: ./mapi run fastapi 10 --url http://localhost:8000/ --sarif results.sarif --html results.html http://localhost:8000/openapi.json  || true
 
-
     # Upload SARIF file (only available on public repos or github enterprise)
     - name: Upload SARIF file
       uses: github/codeql-action/upload-sarif@v1

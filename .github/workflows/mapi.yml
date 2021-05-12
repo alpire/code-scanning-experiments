@@ -36,5 +36,5 @@ jobs:
     - name: Mayhem for API Scan
       env:
         MAPI_TOKEN: ${{ secrets.MAPI_TOKEN }}
-      run: ./mapi run fastapi 10 --url http://localhost:8000/ --sarif results.sarif --html results.html http://localhost:8000/openapi.json --github-token '${{ secrets.GITHUB_TOKEN }}' || true
+      run: ./mapi run fastapi 10 --url http://localhost:8000/ --sarif results.sarif --html results.html http://localhost:8000/openapi.json || true
 

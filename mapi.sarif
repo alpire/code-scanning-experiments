@@ -8,6 +8,7 @@
             "threadFlows": [{
           "locations": [
             {
+            "location": {
           "message": {
             "text": "flow 1 text message",
             "markdown": "flow 1 md message"
@@ -22,8 +23,9 @@
                   "startLine": 142
                 }
               }
-            },
+            }},
             {
+            "location": {
           "message": {
             "text": "flow 2 text message",
             "markdown": "flow 2 md message"
@@ -38,8 +40,7 @@
                   "startLine": 137
                 }
               }
-            }
-          ]
+            }}
           ]
             }]
           }],

@@ -1,0 +1,104 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "codeFlows": [{
+            "threadFlows": [{
+          "locations": [
+            {
+          "message": {
+            "text": "flow 1 text message",
+            "markdown": "flow 1 md message"
+          },
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 142,
+                  "startLine": 142
+                }
+              }
+            },
+            {
+          "message": {
+            "text": "flow 2 text message",
+            "markdown": "flow 2 md message"
+          },
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 138,
+                  "startLine": 137
+                }
+              }
+            }
+          ]
+          ]
+            }]
+          }],
+          "locations": [
+            {
+          "message": {
+            "text": "location text message",
+            "markdown": "location md message"
+          },
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 142,
+                  "startLine": 142
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3133/23100)"
+          },
+          "ruleId": "internal-server-error"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "fullName": "Mayhem for API",
+          "name": "mAPI",
+          "rules": [
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "The API returned an Internal Server Error, indicating an unhandled exception."
+              },
+              "help": {
+                "text": "Consider adding consistent error handling mechanisms which are capable of\nhandling any user input to your API. Ideally, the error would return a 4xx\nstatus like '400 Bad Request', and provide meaningful details to end-users so\nthey understand how to fix their request.\n\nAlso, ensure that in production those error messages are not providing\ninformation useful to an attacker, like a stacktrace.\n"
+              },
+              "id": "internal-server-error",
+              "properties": {
+                "tags": [
+                  "CWE-20",
+                  "CWE-391",
+                  "CWE-550"
+                ]
+              },
+              "shortDescription": {
+                "text": "Internal Server Error"
+              }
+            }
+          ],
+          "semanticVersion": "2.6.6"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

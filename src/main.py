@@ -135,6 +135,10 @@ async def redirect():
 
 @app.get("/exception", status_code=500)
 async def exception():
-    import json
+    inner()
+    return s
+
+def inner():
     s = json.loads(open("/tmp/out").read())
     return s
+

@@ -169,7 +169,7 @@
             }
           ],
           "message": {
-            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3146/23287)"
+            "text": "NameError: name 'json' is not defined in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3147/23289)"
           },
           "ruleId": "internal-server-error"
         },
@@ -190,7 +190,7 @@
             }
           ],
           "message": {
-            "text": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level1'. [Details](https://mayhem4api.forallsecure.com/issues/3146/23288)"
+            "text": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level4'. [Details](https://mayhem4api.forallsecure.com/issues/3147/23290)"
           },
           "ruleId": "ssrf"
         }
@@ -200,27 +200,6 @@
           "fullName": "Mayhem for API",
           "name": "mAPI",
           "rules": [
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "fullDescription": {
-                "text": "Making a network controlled onuser-controlled hostname is vulnerable to unauthorized access of private services."
-              },
-              "help": {
-                "text": "We recommend working with your security team to build and verify your SSRF\nmitigation, whether or not you are using an existing library. As we mentioned,\nSSRF attacks are very tricky to mitigate correctly.\n\n### Input Validation\n\nValidate user input before using it to construct web requests. We strongly\nrecommend using libraries included with your web framework to validate urls\nconstructed from user input. Make sure to read about the library to ensure that\nit protects against:\n- IPv4 and IPv6 private IPs\n- Public domains that resolves to a private IP\n- Domains that resolves to a public IP, but which HTTP redirects to a private IP\n- DNS rebinding, where the domain name resolves to a safe public IP during\nvalidation, but switches to a private IP when the\n\nThe best libraries will have the same interface as a regular HTTP client\nlibrary, and perform all of those safety checks for you under the hood.\n\nThere are many tricks to bypass common SSRF validations. If you cannot reuse\nan existing library, you will need to block all connections to private IPs:\n- 127.0.0.1/8\n- ::1 (IPv6)\n- 10.0.0.0/8\n- 172.16.0.0/12\n- 169.254.0.0/16\n- 192.168.0.0/24\n- For HTTP connections: Disable redirects or validate the redirect destination\n- To mitigate DNS rebinding attacks, resolve the DNS once and use the IP after\nvalidation instead of the domain name.\n\n### Restrict URL Schemes\n\nAllow only URL schemes that your APIs uses. There is no need to have `ftp://`,\n`file://` or even `http://` enabled if your API doesn't require it.\n\n### Enable authentication on internal services\n\nMake sure that authentication is enabled on any service that is running inside\nyour network even if they don’t require it. Services like redis, mongo and\nothers don’t require authentication by default, and this means they are common\nSSRF targets.\n\nIf authentication cannot be easily added, a weaker but easier option is to\nrequire a custom header when accessing an internal service. For instance, the\nGoogle Cloud metadata server -- a common target -- now requires requests to\ncontain the following HTTP header: `Metadata-Flavor: Google`. SSRF requests\nwill not usually contain this header, so SSRF requests will be rejected.\nAttackers will need to chain a SSRF vulnerability with a CRLF injection to\ninject the custom headers, raising the bar for attackers.\n\n### Proxies\n\nWhen an API makes requests on behalf of users, using an external proxy can be a\ngood idea. The proxy would be hosted on an isolated server without access to\nany internal network resources. Ideally, this should be set up with a cloud\nprovider in a different account then where critical resources live.\n\n### Firewalls and Network Segmentation\n\nMost API servers don’t need the ability to connect to all your internal network\nservice. Using network segmentation or firewall rules can help and applying the\nprinciple of least privilege to outbound connections from you rAPI can minimize\nthe severity of SSRF vulnerabilities.\n\n"
-              },
-              "id": "ssrf",
-              "properties": {
-                "tags": [
-                  "Security",
-                  "CWE-918"
-                ]
-              },
-              "shortDescription": {
-                "text": "Server Side Request Forgery (SSRF)"
-              }
-            },
             {
               "defaultConfiguration": {
                 "level": "error"
@@ -241,6 +220,27 @@
               },
               "shortDescription": {
                 "text": "Internal Server Error"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "error"
+              },
+              "fullDescription": {
+                "text": "Making a network controlled onuser-controlled hostname is vulnerable to unauthorized access of private services."
+              },
+              "help": {
+                "text": "We recommend working with your security team to build and verify your SSRF\nmitigation, whether or not you are using an existing library. As we mentioned,\nSSRF attacks are very tricky to mitigate correctly.\n\n### Input Validation\n\nValidate user input before using it to construct web requests. We strongly\nrecommend using libraries included with your web framework to validate urls\nconstructed from user input. Make sure to read about the library to ensure that\nit protects against:\n- IPv4 and IPv6 private IPs\n- Public domains that resolves to a private IP\n- Domains that resolves to a public IP, but which HTTP redirects to a private IP\n- DNS rebinding, where the domain name resolves to a safe public IP during\nvalidation, but switches to a private IP when the\n\nThe best libraries will have the same interface as a regular HTTP client\nlibrary, and perform all of those safety checks for you under the hood.\n\nThere are many tricks to bypass common SSRF validations. If you cannot reuse\nan existing library, you will need to block all connections to private IPs:\n- 127.0.0.1/8\n- ::1 (IPv6)\n- 10.0.0.0/8\n- 172.16.0.0/12\n- 169.254.0.0/16\n- 192.168.0.0/24\n- For HTTP connections: Disable redirects or validate the redirect destination\n- To mitigate DNS rebinding attacks, resolve the DNS once and use the IP after\nvalidation instead of the domain name.\n\n### Restrict URL Schemes\n\nAllow only URL schemes that your APIs uses. There is no need to have `ftp://`,\n`file://` or even `http://` enabled if your API doesn't require it.\n\n### Enable authentication on internal services\n\nMake sure that authentication is enabled on any service that is running inside\nyour network even if they don’t require it. Services like redis, mongo and\nothers don’t require authentication by default, and this means they are common\nSSRF targets.\n\nIf authentication cannot be easily added, a weaker but easier option is to\nrequire a custom header when accessing an internal service. For instance, the\nGoogle Cloud metadata server -- a common target -- now requires requests to\ncontain the following HTTP header: `Metadata-Flavor: Google`. SSRF requests\nwill not usually contain this header, so SSRF requests will be rejected.\nAttackers will need to chain a SSRF vulnerability with a CRLF injection to\ninject the custom headers, raising the bar for attackers.\n\n### Proxies\n\nWhen an API makes requests on behalf of users, using an external proxy can be a\ngood idea. The proxy would be hosted on an isolated server without access to\nany internal network resources. Ideally, this should be set up with a cloud\nprovider in a different account then where critical resources live.\n\n### Firewalls and Network Segmentation\n\nMost API servers don’t need the ability to connect to all your internal network\nservice. Using network segmentation or firewall rules can help and applying the\nprinciple of least privilege to outbound connections from you rAPI can minimize\nthe severity of SSRF vulnerabilities.\n\n"
+              },
+              "id": "ssrf",
+              "properties": {
+                "tags": [
+                  "Security",
+                  "CWE-918"
+                ]
+              },
+              "shortDescription": {
+                "text": "Server Side Request Forgery (SSRF)"
               }
             }
           ],

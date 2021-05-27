@@ -19,31 +19,10 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 4dd4b4de-2cbd-4fc5-8d02-a50d39d86617\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:03:53 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23499)\n",
-            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23499)"
+            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 387c63c0-7f07-4f60-a709-bf2ca1353aff\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:09:34 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3169/23503)\n",
+            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3169/23503)"
           },
           "ruleId": "internal-server-error"
-        },
-        {
-          "locations": [
-            {
-              "physicalLocation": {
-                "artifactLocation": {
-                  "uri": "unknown-file",
-                  "uriBaseId": "%SRCROOT%"
-                },
-                "region": {
-                  "endLine": 1,
-                  "startLine": 1
-                }
-              }
-            }
-          ],
-          "message": {
-            "markdown": "Server Crash in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: fd5f4b4b-41a8-46bb-b5ec-c515351c010d\n\n```\n\n# Sample Response\n\n```http\nMissing response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23500)\n",
-            "text": "Server Crash in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23500)"
-          },
-          "ruleId": "server-crash"
         },
         {
           "locations": [
@@ -61,8 +40,8 @@
             }
           ],
           "message": {
-            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 9a487b09-dd9e-4215-a72a-b45dcda4ef46\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:03:56 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23501)\n",
-            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23501)"
+            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 0c92ae7b-4d1c-4870-8913-480118de3c4c\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:09:39 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3169/23504)\n",
+            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3169/23504)"
           },
           "ruleId": "internal-server-error"
         },
@@ -82,10 +61,10 @@
             }
           ],
           "message": {
-            "markdown": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level2'.\n\n# Sample Request\n\n```http\nGET /ssrf/level2?url=http%3A%2F%2Fmake-127-0-0-1-rr.1u.ms%3A53008 HTTP/1.1\nx-mapi-program-uuid: 6ce27e39-7217-4306-b995-aad670dd4a27\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ndate: Thu, 27 May 2021 18:04:07 GMT\nserver: uvicorn\ncontent-length: 4\ncontent-type: application/json\n\nnull\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23502)\n",
-            "text": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level2'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23502)"
+            "markdown": "Server Crash in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: e9d24b1c-d4dd-418c-ab2f-7d16d6c3431f\n\n```\n\n# Sample Response\n\n```http\nMissing response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3169/23505)\n",
+            "text": "Server Crash in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3169/23505)"
           },
-          "ruleId": "ssrf"
+          "ruleId": "server-crash"
         }
       ],
       "tool": {
@@ -133,27 +112,6 @@
               },
               "shortDescription": {
                 "text": "Server Crash"
-              }
-            },
-            {
-              "defaultConfiguration": {
-                "level": "error"
-              },
-              "fullDescription": {
-                "text": "Making a network controlled onuser-controlled hostname is vulnerable to unauthorized access of private services."
-              },
-              "help": {
-                "text": "We recommend working with your security team to build and verify your SSRF\nmitigation, whether or not you are using an existing library. As we mentioned,\nSSRF attacks are very tricky to mitigate correctly.\n\n### Input Validation\n\nValidate user input before using it to construct web requests. We strongly\nrecommend using libraries included with your web framework to validate urls\nconstructed from user input. Make sure to read about the library to ensure that\nit protects against:\n- IPv4 and IPv6 private IPs\n- Public domains that resolves to a private IP\n- Domains that resolves to a public IP, but which HTTP redirects to a private IP\n- DNS rebinding, where the domain name resolves to a safe public IP during\nvalidation, but switches to a private IP when the\n\nThe best libraries will have the same interface as a regular HTTP client\nlibrary, and perform all of those safety checks for you under the hood.\n\nThere are many tricks to bypass common SSRF validations. If you cannot reuse\nan existing library, you will need to block all connections to private IPs:\n- 127.0.0.1/8\n- ::1 (IPv6)\n- 10.0.0.0/8\n- 172.16.0.0/12\n- 169.254.0.0/16\n- 192.168.0.0/24\n- For HTTP connections: Disable redirects or validate the redirect destination\n- To mitigate DNS rebinding attacks, resolve the DNS once and use the IP after\nvalidation instead of the domain name.\n\n### Restrict URL Schemes\n\nAllow only URL schemes that your APIs uses. There is no need to have `ftp://`,\n`file://` or even `http://` enabled if your API doesn't require it.\n\n### Enable authentication on internal services\n\nMake sure that authentication is enabled on any service that is running inside\nyour network even if they don’t require it. Services like redis, mongo and\nothers don’t require authentication by default, and this means they are common\nSSRF targets.\n\nIf authentication cannot be easily added, a weaker but easier option is to\nrequire a custom header when accessing an internal service. For instance, the\nGoogle Cloud metadata server -- a common target -- now requires requests to\ncontain the following HTTP header: `Metadata-Flavor: Google`. SSRF requests\nwill not usually contain this header, so SSRF requests will be rejected.\nAttackers will need to chain a SSRF vulnerability with a CRLF injection to\ninject the custom headers, raising the bar for attackers.\n\n### Proxies\n\nWhen an API makes requests on behalf of users, using an external proxy can be a\ngood idea. The proxy would be hosted on an isolated server without access to\nany internal network resources. Ideally, this should be set up with a cloud\nprovider in a different account then where critical resources live.\n\n### Firewalls and Network Segmentation\n\nMost API servers don’t need the ability to connect to all your internal network\nservice. Using network segmentation or firewall rules can help and applying the\nprinciple of least privilege to outbound connections from you rAPI can minimize\nthe severity of SSRF vulnerabilities.\n\n"
-              },
-              "id": "ssrf",
-              "properties": {
-                "tags": [
-                  "Security",
-                  "CWE-918"
-                ]
-              },
-              "shortDescription": {
-                "text": "Server Side Request Forgery (SSRF)"
               }
             }
           ],

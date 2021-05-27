@@ -26,10 +26,19 @@
             }},
             {
             "location": {
-          "message": {
-            "text": "flow 2 text message",
-            "markdown": "flow 2 md message"
-          },
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/usr/lib/blah.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 138,
+                  "startLine": 137
+                }
+              }
+            }},
+            {
+            "location": {
               "physicalLocation": {
                 "artifactLocation": {
                   "uri": "src/main.py",

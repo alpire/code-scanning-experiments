@@ -4,53 +4,6 @@
     {
       "results": [
         {
-          "relatedLocations": [
-                    {
-                    "id": 1,
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "src/main.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 142,
-                            "startLine": 142
-                          }
-                        },
-                        "message": {
-                "text": "here 1"
-              }
-                    },
-                    {
-                    "id": 2,
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "src/main.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 138,
-                            "startLine": 138
-                          }
-                        },
-                        "message": {
-                "text": "here 2"
-              }
-                    },
-                    {
-                    "id": 3,
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 201,
-                            "startLine": 201
-                          }
-                      }
-                    }
-          ],
           "locations": [
             {
               "physicalLocation": {
@@ -66,12 +19,12 @@
             }
           ],
           "message": {
-            "text": "NameError: name 'json' is not defined in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3147/23289)"
+            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 4dd4b4de-2cbd-4fc5-8d02-a50d39d86617\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:03:53 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23499)\n",
+            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23499)"
           },
           "ruleId": "internal-server-error"
         },
         {
-          "codeFlows": [],
           "locations": [
             {
               "physicalLocation": {
@@ -87,7 +40,50 @@
             }
           ],
           "message": {
-            "text": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level4'. [Details](https://mayhem4api.forallsecure.com/issues/3147/23290)"
+            "markdown": "Server Crash in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: fd5f4b4b-41a8-46bb-b5ec-c515351c010d\n\n```\n\n# Sample Response\n\n```http\nMissing response\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23500)\n",
+            "text": "Server Crash in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23500)"
+          },
+          "ruleId": "server-crash"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "src/main.py",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 142,
+                  "startLine": 142
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Internal Server Error in 'GET /exception'.\n\n# Sample Request\n\n```http\nGET /exception HTTP/1.1\nx-mapi-program-uuid: 9a487b09-dd9e-4215-a72a-b45dcda4ef46\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 500 Internal Server Error\ndate: Thu, 27 May 2021 18:03:56 GMT\nserver: uvicorn\ncontent-length: 1549\n\nTraceback (most recent call last):\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py\", line 159, in __call__\n    await self.app(scope, receive, _send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 82, in __call__\n    raise exc from None\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py\", line 71, in __call__\n    await self.app(scope, receive, sender)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 580, in __call__\n    await route.handle(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 241, in handle\n    await self.app(scope, receive, send)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py\", line 52, in app\n    response = await func(request)\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 201, in app\n    raw_response = await run_endpoint_function(\n  File \"/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py\", line 148, in run_endpoint_function\n    return await dependant.call(**values)\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 138, in exception\n    inner()\n  File \"/Users/apr/fas/gh/code-scanning-experiments/./src/main.py\", line 142, in inner\n    s = json.loads(open(\"/tmp/out\").read())\nNameError: name 'json' is not defined\n\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23501)\n",
+            "text": "Internal Server Error in 'GET /exception'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23501)"
+          },
+          "ruleId": "internal-server-error"
+        },
+        {
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "unknown-file",
+                  "uriBaseId": "%SRCROOT%"
+                },
+                "region": {
+                  "endLine": 1,
+                  "startLine": 1
+                }
+              }
+            }
+          ],
+          "message": {
+            "markdown": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level2'.\n\n# Sample Request\n\n```http\nGET /ssrf/level2?url=http%3A%2F%2Fmake-127-0-0-1-rr.1u.ms%3A53008 HTTP/1.1\nx-mapi-program-uuid: 6ce27e39-7217-4306-b995-aad670dd4a27\n\n```\n\n# Sample Response\n\n```http\nHTTP/1.1 200 OK\ndate: Thu, 27 May 2021 18:04:07 GMT\nserver: uvicorn\ncontent-length: 4\ncontent-type: application/json\n\nnull\n```\n\n[Details](https://mayhem4api.forallsecure.com/issues/3168/23502)\n",
+            "text": "Server Side Request Forgery (SSRF) in 'GET /ssrf/level2'. [Details](https://mayhem4api.forallsecure.com/issues/3168/23502)"
           },
           "ruleId": "ssrf"
         }
@@ -117,6 +113,26 @@
               },
               "shortDescription": {
                 "text": "Internal Server Error"
+              }
+            },
+            {
+              "defaultConfiguration": {
+                "level": "warning"
+              },
+              "fullDescription": {
+                "text": "A server that can be forced to crash may be vulnerable to denial-of-service attacks."
+              },
+              "help": {
+                "text": "Ensure that unhandled errors cannot take down the entire server and does not\nimpact subsequent requests.\n"
+              },
+              "id": "server-crash",
+              "properties": {
+                "tags": [
+                  "CWE-730"
+                ]
+              },
+              "shortDescription": {
+                "text": "Server Crash"
               }
             },
             {

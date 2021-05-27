@@ -4,13 +4,9 @@
     {
       "results": [
         {
-          "codeFlows": [
-            {
-              "threadFlows": [
-                {
-                  "locations": [
+          "relatedLocations": [
                     {
-                      "location": {
+                    "id": 1,
                         "physicalLocation": {
                           "artifactLocation": {
                             "uri": "src/main.py",
@@ -20,11 +16,13 @@
                             "endLine": 142,
                             "startLine": 142
                           }
-                        }
-                      }
+                        },
+                        "message": {
+                "text": "here 1"
+              }
                     },
                     {
-                      "location": {
+                    "id": 2,
                         "physicalLocation": {
                           "artifactLocation": {
                             "uri": "src/main.py",
@@ -34,25 +32,13 @@
                             "endLine": 138,
                             "startLine": 138
                           }
-                        }
-                      }
+                        },
+                        "message": {
+                "text": "here 2"
+              }
                     },
                     {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 148,
-                            "startLine": 148
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
+                    "id": 3,
                         "physicalLocation": {
                           "artifactLocation": {
                             "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/fastapi/routing.py",
@@ -62,97 +48,8 @@
                             "endLine": 201,
                             "startLine": 201
                           }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 52,
-                            "startLine": 52
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 241,
-                            "startLine": 241
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/routing.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 580,
-                            "startLine": 580
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 71,
-                            "startLine": 71
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/exceptions.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 82,
-                            "startLine": 82
-                          }
-                        }
-                      }
-                    },
-                    {
-                      "location": {
-                        "physicalLocation": {
-                          "artifactLocation": {
-                            "uri": "/Users/apr/.pyenv/versions/3.9.5/lib/python3.9/site-packages/starlette/middleware/errors.py",
-                            "uriBaseId": "%SRCROOT%"
-                          },
-                          "region": {
-                            "endLine": 159,
-                            "startLine": 159
-                          }
-                        }
                       }
                     }
-                  ]
-                }
-              ]
-            }
           ],
           "locations": [
             {
